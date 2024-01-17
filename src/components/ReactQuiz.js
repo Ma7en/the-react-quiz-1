@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-case-declarations */
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 import "./index.scss";
 
 import Header from "./Header";
@@ -14,6 +12,7 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Timer from "./Timer";
 import Footer from "./Footer";
+
 import { useQuiz } from "../contexts/QuizContext";
 
 const ReactQuiz = () => {

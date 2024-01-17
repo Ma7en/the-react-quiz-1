@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-case-declarations */
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { getQuizs } from "../services/apiQuizs";
 
 const QuizContext = createContext();
 
@@ -119,8 +121,16 @@ function QuizProvider({ children }) {
     useEffect(function () {
         async function getQuiz() {
             try {
-                const response = await fetch(`http://localhost:8000/questions`);
-                const data = await response.json();
+                // const response = await fetch(`http://localhost:8000/questions`);
+                // const response = await getQuizs().then((data) => {
+                //     return data;
+                // });
+                // console.log(`res:-`, response);
+                // const response = await fetch(getQuizs());
+                // const data = await response.json();
+
+                const data = await getQuizs().then((data) => data);
+                console.log(`data:-`, data);
                 dispatch({ type: "dataReceived", payload: data });
                 console.log(``, data);
             } catch (error) {

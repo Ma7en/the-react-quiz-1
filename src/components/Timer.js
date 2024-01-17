@@ -4,6 +4,8 @@ import { useQuiz } from "../contexts/QuizContext";
 const Timer = () => {
     const { dispatch, secondsRemaining } = useQuiz();
 
+    // console.log(`sec:-`, secondsRemaining);
+
     const mins = Math.floor(secondsRemaining / 60);
     const seconds = secondsRemaining % 60;
 
