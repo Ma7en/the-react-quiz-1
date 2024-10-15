@@ -130,9 +130,10 @@ function QuizProvider({ children }) {
                 // const data = await response.json();
 
                 const data = await getQuizs().then((data) => data);
-                console.log(`data:-`, data);
+                // console.log(`data:-`, data);
+
                 dispatch({ type: "dataReceived", payload: data });
-                console.log(``, data);
+                // console.log(``, data);
             } catch (error) {
                 // console.log(``, error);
                 dispatch({ type: "dataFailed" });
